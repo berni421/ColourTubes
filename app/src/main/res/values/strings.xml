@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ColourTubes</string>
+    <string name="disclaimer_text"><center>Terms of Use</center>
+        \n\nPlease ensure that before using
+        this application that you expressly understand and agree that
+        your use of this application is at your sole risk and that the application is provided
+        “as is” and “as available” without warranty of any kind, to the maximum extent permitted by
+        applicable law.
+        \n\nOnce the application is available to you through your google account,
+        you should check the application as soon as reasonably possible to ensure that it functions
+        and performs as stated, and notify us or Provider as soon as reasonably possible if you
+        find any errors or defect.
+    </string>
+    <string name="disclaimer_accept">I accept these terms.</string>
+    <string name="dont_show_next_time">Do not show next time?</string>
+    <string name="intro_welcome">Welcome
+        \n\nThis work is based on Felipe Pantone exhibition of chromodynamics.
+        </string>
+    <string name="intro_welcome2">Felipe is an Argentinian-born artist, active in the fields of
+        kinetic art, installations, graffiti and design. His style is characterized by the use
+        of bold colors, geometrical patterns and Op Art elements. Straddling conventional graffiti,
+        typography and abstraction, his work fuses bold elements of graphic design with highly
+        evolved geometric shapes to create an ultra-modern aesthetic which complements and reacts
+        with the stark modernity of our cityscapes.
+        \nSee <a hrefs="https://www.felipepantone.com/chromadynamica">https://www.felipepantone.com/chromadynamica</a>
+        \nGraphics library credit: <a href="https://android.processing.org/">https://android.processing.org/</a>
+    </string>
+    <string name="into_donate_text">Please make a financial gift of your choice to support my software projects.
+        See menu options top right - help feed the cat.</string>
+</resources>
