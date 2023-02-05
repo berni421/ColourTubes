@@ -38,6 +38,7 @@ class Sketch : PApplet() {
         translate(oX.toFloat(), oY.toFloat(), 0f)
         rotateY(0.1f * frameCount / TWO_PI)
         tubes.display()
+        tubes.update()
     }
 
     private fun requestPermissions(permissions: Array<String>?) {

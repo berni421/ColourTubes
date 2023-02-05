@@ -1,5 +1,10 @@
 package com.elbourn.android.colourtubes.processing
 
+import androidx.core.graphics.alpha
+import androidx.core.graphics.blue
+import androidx.core.graphics.green
+import androidx.core.graphics.red
+
 class Tubes(val sketch: Sketch) {
     val TAG: String = javaClass.simpleName
 
@@ -45,6 +50,12 @@ class Tubes(val sketch: Sketch) {
         }
         sketch.pop()
     }
+
+    fun update() {
+        for (tube in tubes.iterator()) {
+            tube.update()
+        }
+    }
 }
 
 class Bands(val sketch: Sketch) {
@@ -58,18 +69,33 @@ class Bands(val sketch: Sketch) {
 
         for (i in 0 until numberColourBands) {
             val alpha = sketch.random(255f)
-            val newRed = colourRed + plusMinus() * sketch.random(255f/numberColourBands)
-            val newGreen = colourGreen + plusMinus() * sketch.random(255f/numberColourBands)
-            val newBlue = colourBlue + plusMinus() * sketch.random(255f/numberColourBands)
-            bands.add(sketch.color(
-                colourLimit(newRed),
-                colourLimit(newGreen),
-                colourLimit(newBlue),
-                alpha)
+            val newRed = colourRed + plusMinus() * sketch.random(128f)
+            val newGreen = colourGreen + plusMinus() * sketch.random(128f)
+            val newBlue = colourBlue + plusMinus() * sketch.random(128f)
+            bands.add(
+                sketch.color(
+                    colourLimit(newRed),
+                    colourLimit(newGreen),
+                    colourLimit(newBlue),
+                    alpha
+                )
             )
             colourRed = newRed
             colourGreen = newGreen
             colourBlue = newBlue
+        }
+    }
+
+    fun update() {
+        for (i in 0 until bands.size) {
+            val oldColour = bands[i]
+            val newAlpha = oldColour.alpha + plusMinus() * sketch.random(32f)
+            bands[i] = sketch.color(
+                oldColour.red,
+                oldColour.green,
+                oldColour.blue,
+                colourLimit(newAlpha).toInt()
+            )
         }
     }
 
@@ -116,6 +142,10 @@ class Tube(
             sketch.translate(0f, -bandLength, 0f)
         }
         sketch.pop()
+    }
+
+    fun update() {
+        colourBands.update()
     }
 }
 
