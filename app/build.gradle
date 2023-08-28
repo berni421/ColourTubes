@@ -11,8 +11,8 @@ android {
         applicationId "com.elbourn.android.colourtubes"
         minSdk 23
         targetSdk 33
-        versionCode 3
-        versionName "0.0.3"
+        versionCode 4
+        versionName "v1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -35,9 +35,8 @@ android {
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.6.0'
-    implementation 'com.google.android.material:material:1.8.0'
-//    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.navigation:navigation-fragment:2.5.3'
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
     testImplementation 'junit:junit:4.13.2'
