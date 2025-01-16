@@ -5,14 +5,15 @@ plugins {
 
 android {
     namespace 'com.elbourn.android.colourtubes'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.elbourn.android.colourtubes"
         minSdk 23
-        targetSdk 33
-        versionCode 4
-        versionName "v1.0"
+        //noinspection EditedTargetSdkVersion
+        targetSdk 34
+        versionCode 5
+        versionName "v1.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
