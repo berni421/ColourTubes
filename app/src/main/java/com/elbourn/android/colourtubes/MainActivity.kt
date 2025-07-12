@@ -3,6 +3,8 @@ package com.elbourn.android.colourtubes
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.OnBackPressedCallback
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.elbourn.android.colourtubes.fragments.ProcessingFragment
 import com.elbourn.android.colourtubes.fragments.ProcessingFragment.Companion.processingFragment
@@ -14,6 +16,8 @@ class MainActivity : OptionsMenu() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        // adding onbackpressed callback listener.
+        onBackPressedDispatcher.addCallback(this,onBackPressedCallback)
     }
 
     override fun onRequestPermissionsResult(
@@ -30,8 +34,15 @@ class MainActivity : OptionsMenu() {
         sketch.onNewIntent(intent)
     }
 
-    override fun onBackPressed() {
-        finishAffinity()
+//    override fun onBackPressed() {
+//        finishAffinity()
+//    }
+
+    private val onBackPressedCallback = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            //showing dialog and then closing the application..
+            finishAffinity()
+        }
     }
 
     companion object {
